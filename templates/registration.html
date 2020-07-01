@@ -1,0 +1,43 @@
+
+
+{% extends 'navbar.html'%}
+{% block body %}
+<div class="container" style ='font-size: large;font-style: initial; font-variant: small-caps;'>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+          
+{% if message != '' %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ message }}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ {% endif %}
+
+<form action="/registration" method="POST">
+  <div class="form-group">
+    Patient ID  <span><i class="fa fa-id-badge" aria-hidden="true"></i></span><input class='form-control' type="text" required disabled placeholder='System Generated'> <br>
+    Patient Name <span><i class="fa fa-star" aria-hidden="true"></i></span> <input type="text"placeholder="Enter the Name of the Patient" pattern="[A-Za-z ]+" class='form-control' required name='name'> <br>
+    Patient Age <span><i class="fa fa-birthday-cake" aria-hidden="true"></i></span><input min="0" step="1" oninput="validity.valid||(value='');" type="number" placeholder="Enter the Age of the Patient" class='form-control' required name='age'> <br>
+    Date of Joining <span><i class="fa fa-calendar" aria-hidden="true"></i></span> <input class='form-control' type="text" required disabled placeholder="System Generated"> <br>
+    Type of Bed <span><i class="fa fa-bed" aria-hidden="true"></i></span> <select required name="type" class="custom-select " >
+        <option value="" disabled selected>Select Type</option>
+        <option value="General">General Ward </option>
+        <option value="semisharing">Sharing </option>
+        <option value="single">Single</option>
+      </select>
+       <hr>
+    Address: <span><i class="fa fa-address-card" aria-hidden="true"></i></span> <input type="text" placeholder="Enter the Address" class='form-control '  required name = 'address'> <br>
+    <button type ="submit" class="btn btn-primary btn-block">Register</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

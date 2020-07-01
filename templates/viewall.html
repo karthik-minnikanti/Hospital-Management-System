@@ -1,0 +1,33 @@
+{% extends 'navbar.html'%}
+{% block body %}
+<div class="container" style ='font-size: large;font-style: initial; font-variant: small-caps;'>
+  <h3 style='align-items: center;text-align: center; margin-top: 20px;'>Patients Info <span><i class="fa fa-info-circle" aria-hidden="true"></i></span> </h3>
+<table class="table table-hover" style="margin-top: 20px; align-items: center; text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Patient ID  <span><i class="fa fa-id-badge" aria-hidden="true"></i></span> </th>
+        <th scope="col">Patient Name <span><i class="fa fa-star" aria-hidden="true"></i></span> </th>
+        <th scope="col">Age <span><i class="fa fa-birthday-cake" aria-hidden="true"></i></span> </th>
+        <th scope="col">Date of Joining <span><i class="fa fa-calendar" aria-hidden="true"></i></span></th>
+        <th scope="col">Address <span><i class="fa fa-address-card" aria-hidden="true"></i></span> </th>
+        <th scope="col">Type of Bed <span><i class="fa fa-bed" aria-hidden="true"></i></span> </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+        <tr class="table-active">
+            <th scope="row">{{patient[0]}}</th>
+            <td>{{patient[1]}}</td>
+            <td>{{patient[2]}}</td>
+            <td>{{patient[3]}}</td>
+            <td>{{patient[4]}}</td>
+            <td>{{patient[5]}}</td>
+          </tr>
+        {% endfor %}
+      
+    </tbody>
+</table> 
+
+</div>
+
+  {% endblock%}

@@ -1,0 +1,28 @@
+{% extends 'navbar.html'%}
+{% block body %}
+<div class="container" style ='font-size: large;font-style: initial; font-variant: small-caps;'>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+{% if message != '' %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ message }}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ {% endif %}
+
+
+<form action="/delete" method="POST">
+
+    Patient ID : <span><i class="fa fa-id-badge" aria-hidden="true"></i></span> <input  class= 'form-control'type="text" placeholder="Enter the Patient Id" name='id'> <br>  
+    <button class= 'btn btn-primary btn-block'type = "submit">GET INFO</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock%}

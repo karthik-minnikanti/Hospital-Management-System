@@ -1,0 +1,31 @@
+<link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/pulse/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<div class="container" style ='font-size: large;font-style: initial; font-variant: small-caps;'>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <div class="form-group">
+          {% if message != '' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ message }}
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             {% endif %}
+<form action="/login" method='POST'>
+    <div class="form-group">
+<label>username <span><i class="fa fa-user-circle" aria-hidden="true"></i></span></label>
+ <input  class="form-control" type="text" pattern="[A-Za-z]+" placeholder="Enter the Username" required name='username'> <br> </div>
+<label for="password">password <span><i class="fa fa-lock" aria-hidden="true"></i></span></label> <input  class="form-control" type="password" placeholder="Enter the Password" required name='password'> <br>
+<button  class="btn btn-primary btn-block" type="submit">Login</button>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
